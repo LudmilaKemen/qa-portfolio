@@ -17,17 +17,25 @@ def get_path(n, m):
     return ''.join(path)
 
 
-# проверка аргументов
+# проверка количества аргументов
 if len(sys.argv) != 5:
-    print("Введите 4 аргумента: n1 m1 n2 m2")
+    print("Usage: python main.py n1 m1 n2 m2")
     sys.exit(1)
 
-# читаем аргументы
-n1, m1, n2, m2 = map(int, sys.argv[1:])
+try:
+    n1, m1, n2, m2 = map(int, sys.argv[1:])
+except ValueError:
+    print("All arguments must be integers")
+    sys.exit(1)
 
-# считаем пути
+# проверка значений
+if n1 <= 0 or n2 <= 0 or m1 <= 0 or m2 <= 0:
+    print("All values must be positive integers")
+    sys.exit(1)
+
+# вычисление
 result1 = get_path(n1, m1)
 result2 = get_path(n2, m2)
 
-# вывод результата
+# вывод
 print(result1 + result2)
