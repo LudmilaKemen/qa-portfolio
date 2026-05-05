@@ -16,8 +16,18 @@ def get_path(n, m):
 
     return ''.join(path)
 
+
+# проверка аргументов
+if len(sys.argv) != 5:
+    print("Введите 4 аргумента: n1 m1 n2 m2")
+    sys.exit(1)
+
+# читаем аргументы
 n1, m1, n2, m2 = map(int, sys.argv[1:])
 
-result = get_path(n1, m1) + get_path(n2, m2)
+# считаем пути
+result1 = get_path(n1, m1)
+result2 = get_path(n2, m2)
 
-print(result)
+# вывод результата
+print(result1 + result2)
