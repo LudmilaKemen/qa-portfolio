@@ -42,3 +42,10 @@
 - Extend test coverage for edge cases
 - Add bug reports for simulated defects
 - Improve documentation of test strategy
+
+The tasks were implemented with focus on:
+- input validation
+- edge cases handling
+- data consistency
+- API response verification
+- reproducibility of test results
