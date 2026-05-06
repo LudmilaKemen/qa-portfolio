@@ -36,3 +36,9 @@
 - объединение структуры тестов
 - сопоставление результатов по id
 - генерация итогового отчета
+## What I would improve
+
+- Add more negative test cases for API testing
+- Extend test coverage for edge cases
+- Add bug reports for simulated defects
+- Improve documentation of test strategy
