@@ -1,0 +1,58 @@
+{
+  "info": {
+    "name": "QA API Tests",
+    "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+    "description": "Basic API tests for QA portfolio",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/users",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test(\"Status code is 200\", function () {",
+          "    pm.response.to.have.status(200);",
+          "});",
+          "",
+          "pm.test(\"Response is not empty\", function () {",
+          "    let data = pm.response.json();",
+          "    pm.expect(data.length).to.be.above(0);",
+          "});",
+          "",
+          "pm.test(\"Each user has id\", function () {",
+          "    let data = pm.response.json();",
+          "    pm.expect(data[0]).to.have.property(\"id\");",
+          "});",
+          "",
+          "pm.test(\"Each user has email\", function () {",
+          "    let data = pm.response.json();",
+          "    pm.expect(data[0]).to.have.property(\"email\");",
+          "});"
+        ]
+      }
+    }
+  ]
+}
